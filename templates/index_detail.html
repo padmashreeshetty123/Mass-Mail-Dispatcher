@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Mass Mail Dispatcher</title>
+    <style>
+        body{
+        overflow: hidden;
+        }
+        input{
+            background-color: rgb(83, 7, 159);
+            color:white;
+            padding: 20px;
+            border:3px solid white;
+        }
+        .button{
+            display: flex;
+            width:100vw;
+            height:10vh;
+            margin-left:13px;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .list{
+            display: flex;
+            height:80vh;
+           overflow:hidden;
+            width:100vw;
+            padding:30px;
+            margin-bottom:10vh;
+        }
+        .l1{
+            background-color: rgba(250, 235, 215, 0.075);
+            overflow: scroll;
+            min-height:80vh;
+            width:40vw;
+            padding:35px 0 0 30px;
+            margin:0 3vw;
+            position: relative;
+
+        }
+        .l2{
+            background-color: rgba(250, 235, 215, 0.075);
+            overflow: scroll;
+            height:80vh;
+            width:40vw;
+            padding:35px 0 0 30px;
+            margin:0 3vw;
+            position: relative;
+        }
+        h1{
+            color: brown;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: fixed;
+            top:10vh;
+            background: rgba(0, 0, 0, 0.158);
+            backdrop-filter: blur(1px);
+            width:40vw;
+            text-align: center;
+        }
+        ::-webkit-scrollbar {
+  width: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="button">
+    <form action="/recievedata" method="POST" enctype="multipart/form-data" class="f2">
+        <input type="submit" value="SEND MAIL">
+    </form>
+</div>
+   
+    <div class="list">
+        <div class="l1">
+            <h1>VALID MAIL ID'S</h1>
+            {% if valid %}
+            {% for v in valid: %}
+            <p>{{v}}</p>
+             {% endfor %}
+             {% endif %}
+        </div>
+        <div class="l2">
+            <h1>INVALID MAIL ID'S</h1>
+            {% if invalid %}
+            {% for v in invalid: %}
+            <p>{{v}}</p>
+             {% endfor %}
+             {% endif %}
+
+            </p></div>
+    </div>
+</body>
+</html>

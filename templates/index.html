@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Mail Dispatcher</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Lato&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        body{
+    padding: 0;
+    margin: 0;
+    }
+    .land_page{
+        width:100vw;
+        display: flex;
+        height:100vh;
+    }
+    .s1{
+        background: url('static/greenbg.jpg') center center;
+        background-size: cover;
+        height:100%;
+        width:100vw;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    .s2{
+        background: url('static/gif-email.gif') center center;
+        background-size: cover;
+        height:100%;
+        width:0vw;
+    }
+    .s1 h1{
+        font-size:50px;
+        color:#f2da8d;
+    }
+    .s1 p{
+        margin-top:-20px;
+        font-size: 20px;
+        color:#e2d97c;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    .flex 
+    {
+        height:75vh;
+        background: url('static/bg.webp');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .flex h1{
+        font-size:24px;
+        margin-bottom: 30px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .flex form{
+    padding:40px;
+    background: transparent;
+    background: rgba(187, 187, 175, 0.171);
+    border-radius: 30px;
+    box-shadow: 10px 10px #888888;
+    backdrop-filter: blur(5px);
+     width:50%;
+     height:60%;
+    }
+    input[type='file']{
+        margin:10px 0;
+        height:30px;
+    }
+    .f1{
+        margin-top:30px;
+        margin-left:10%;
+        
+    }
+    input[type='submit']{
+        background-color:rgb(175, 175, 202);
+        display: inline-block;
+       margin-top: 20px;
+        color:black;
+        height: 35px;
+        width:100px;
+        border-radius: 10px;
+    }
+    
+    footer{    
+        height: 10vh;
+        background-color: rgba(103, 108, 105, 0.943);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="land_page">
+        <div class="s1">
+           <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600">A MASS MAIL <br> DISPATCHER</h1>
+           <p data-aos-delay="1500" data-aos="zoom-in" data-aos-duration="1000">Send mails to multiple <br>recipients instantly </p>
+        </div>
+        <div class="s2">
+           <!-- <img src="{{url_for('static', filename='mail9.png')}}" alt=""> -->
+        </div>
+    </div>
+    
+    <div class="flex">
+        <form action="/result" method="POST" enctype="multipart/form-data" class="f1">
+        <h1>SELECT YOUR FILE :</h1>
+        <input type="file" name="data" id="data" accept=".csv"> <br>
+        <input type="submit" value="SUBMIT" id="btn">
+       
+    </form>
+    </div>
+    <!-- <div class="mailicon">
+         
+        <img src="images/mail.png" alt="">
+        <P id="p1" >A MASS MAIL  <br> DISPATCHER</P>
+        <p id="p2"></p>
+    </div> -->
+   
+
+<!-- <script>
+    $(document).ready(function(){
+       $('#btn').bind('click',function(){
+        const message=$('#mes').val();
+        const filelist=$("#emaillist").val();
+        if(message=="")
+        {
+          
+        }
+        else{
+           
+            $.ajax(
+                {
+                    url:'data.py',
+                    method:'post',
+                    data:{msgtosend:message},
+                    dataType:'text',
+                    success: function(data)
+                    {
+                        alert(data);
+                    }
+                }
+            );
+    
+        }
+       });
+    });
+</script> -->
+<footer>
+    COPYRIGHT &copy; 
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
+</html>
+
